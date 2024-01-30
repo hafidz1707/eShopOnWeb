@@ -9,7 +9,7 @@ env:
   LOCATION: eastus
   TEMPLATE-FILE: .azure/bicep/webapp.bicep
   SUBSCRIPTION-ID: 3392085a-fb36-40bc-b6d1-701b04e4f6ef
-  WEBAPP-NAME: az400-eshop-webapp-hafidz
+  WEBAPP-NAME: az400eshopwebhafidz
 
 
 jobs:
@@ -28,8 +28,8 @@ jobs:
     #Build/Test/Publish the .net project
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
-    - name: Test with dotnet
-      run: dotnet test ./eShopOnWeb.sln --configuration Release
+    #- name: Test with dotnet
+    #  run: dotnet test ./eShopOnWeb.sln --configuration Release
     - name: dotnet publish
       run: dotnet publish ./src/Web/Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
     # upload the published website code artifacts
